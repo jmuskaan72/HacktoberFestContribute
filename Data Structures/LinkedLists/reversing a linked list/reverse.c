@@ -6,13 +6,17 @@ typedef struct Node
 {
     int data;
     struct Node *next;
-}node;
+} *head=NULL;
 
 //inserting a new node at the beginning and updating head of the list
-void insertNode(node **head,int data)
+struct Node *temp; 
+void insertNode()
 {
-    node *temp=(node*)malloc(sizeof(node*));
-    temp->data=data;
+    int item;
+    temp=( struct Node*)malloc(sizeof(struct Node*));
+    printf("enter the data: ");
+    scanf("%d",&item):
+    temp->data=item;
     temp->next=*head;
     *head=temp;
 }
@@ -30,7 +34,6 @@ void printList(node *head)
 }
 
 //reverses the linked list by reversing the next pointer of each node
-//three pointers are maintained pointing to the current node and nodes previous and next to the current node
 void reverse(node **head)
 {
     if(*head==NULL || (*head)->next==NULL)
